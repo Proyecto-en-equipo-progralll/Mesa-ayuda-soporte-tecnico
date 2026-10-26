@@ -1,0 +1,9 @@
+MESA DE AYUDA - PROYECTO COMPLETO
+1. Esta carpeta incluye una base de datos SQLite lista con datos de demostracion: mesa_ayuda.db.
+2. Abre ACCESO_INICIAL.txt para consultar usuario y clave inicial. Cambia la clave ejecutando: python cambiar_clave.py
+3. En Windows abre INSTALAR_WINDOWS.bat y despues INICIAR_WINDOWS.bat.
+4. Abre http://127.0.0.1:8000 y la API en http://127.0.0.1:8000/docs
+5. No ejecutes inicializar_bd.py si quieres conservar estos datos: recrea las tablas.
+6. Diagramas incluidos: diagrama_UML.md, diagrama_ER.md y sus archivos .png.
+7. Esta base tiene datos de ejemplo, NO son registros del equipo del usuario. Para conservar los datos de una instalacion previa, usa una copia de su propia mesa_ayuda.db.
+8. No subas ACCESO_INICIAL.txt ni mesa_ayuda.db con credenciales a un repositorio publico.

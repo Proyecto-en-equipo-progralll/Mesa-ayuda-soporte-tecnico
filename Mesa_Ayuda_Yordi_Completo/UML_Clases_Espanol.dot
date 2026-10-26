@@ -1,0 +1,27 @@
+digraph G {
+ graph [fontname="DejaVu Sans", bgcolor="white", ranksep=1.05, nodesep=.48, pad=.35, splines=true, labelloc=t, label="UML DE CLASES · MESA DE AYUDA DE SOPORTE TÉCNICO\nProyecto 15 · Programación III · UPH", fontsize=22, fontcolor="#173456"];
+ node [shape=record, style="rounded,filled", fillcolor="#EAF3FB", color="#7697B9", penwidth=1.4, fontname="DejaVu Sans", fontsize=11, margin=".17,.13"];
+ edge [fontname="DejaVu Sans", fontsize=10, color="#50667B", arrowsize=.8];
+
+
+
+ entidad [label="{Entidad (clase base)|+ id: entero}", fillcolor="#FFF4DD"];
+ departamento [label="{Departamento|+ id: entero\l+ nombre: texto\l+ ubicacion: texto\l}"];
+ equipo [label="{Equipo|+ id: entero\l+ codigo_inventario: texto\l+ tipo: texto\l+ marca: texto\l+ departamento_id: entero\l}"];
+ tecnico [label="{Tecnico|+ id: entero\l+ nombre: texto\l+ especialidad: texto\l+ correo: texto\l}"];
+ ticket [label="{Ticket|+ id: entero\l+ equipo_id: entero\l+ descripcion: texto\l+ prioridad: texto\l+ estado: texto\l+ tecnico_id: entero opcional\l|+ puede_cerrarse(seguimientos): booleano\l}", fillcolor="#E7F7F1", color="#339174", penwidth=2];
+ seguimiento [label="{Seguimiento|+ id: entero\l+ ticket_id: entero\l+ comentario: texto\l+ fecha: fecha y hora opcional\l}"];
+ usuario [label="{Usuario|+ id: entero\l+ nombre_usuario: texto\l+ rol: texto\l}"];
+ repositorio [label="{RepositorioBase|+ listar(buscar)\l+ obtener(id)\l+ crear(datos)\l+ actualizar(id, datos)\l+ eliminar(id)\l}", fillcolor="#FFF4DD"];
+ departamento -> equipo [arrowhead=none, taillabel="1", headlabel="0..*", label="pertenencia", minlen=2];
+ equipo -> ticket [arrowhead=none, taillabel="1", headlabel="0..*", label="reportes", minlen=2];
+ tecnico -> ticket [arrowhead=none, taillabel="0..1", headlabel="0..*", label="asignación", minlen=2];
+ ticket -> seguimiento [arrowhead=none, taillabel="1", headlabel="0..*", label="historial", minlen=2];
+ tecnico -> usuario [arrowhead=none, taillabel="0..1", headlabel="0..1", style=dashed, label="cuenta opcional"];
+
+
+
+
+
+
+}
