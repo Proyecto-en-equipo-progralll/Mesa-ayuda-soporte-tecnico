@@ -1,0 +1,18 @@
+digraph UML {
+ graph [label="MESA DE AYUDA DE SOPORTE TÉCNICO\nUML de clases - Proyecto 15 · Programación III", labelloc=t, fontsize=24, fontname="DejaVu Sans", fontcolor="#183153", bgcolor="white", ranksep=1.15, nodesep=0.85, splines=polyline, pad=0.45];
+ node [shape=plain, fontname="DejaVu Sans"];
+ edge [color="#64748b", fontname="DejaVu Sans", fontsize=12, penwidth=1.8, arrowsize=0.75];
+ Departamento [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="9" COLOR="#2563eb" BGCOLOR="#eff6ff"><TR><TD BGCOLOR="#2563eb"><FONT COLOR="white"><B>DEPARTAMENTO</B></FONT></TD></TR><TR><TD ALIGN="LEFT">id: entero<BR ALIGN="LEFT"/>nombre: texto<BR ALIGN="LEFT"/>ubicación: texto</TD></TR></TABLE>>];
+ Equipo [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="9" COLOR="#2563eb" BGCOLOR="#eff6ff"><TR><TD BGCOLOR="#2563eb"><FONT COLOR="white"><B>EQUIPO</B></FONT></TD></TR><TR><TD ALIGN="LEFT">id: entero<BR ALIGN="LEFT"/>código de inventario: texto<BR ALIGN="LEFT"/>tipo y marca: texto<BR ALIGN="LEFT"/>departamento_id: entero</TD></TR></TABLE>>];
+ Ticket [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="9" COLOR="#0f766e" BGCOLOR="#f0fdfa"><TR><TD BGCOLOR="#0f766e"><FONT COLOR="white"><B>TICKET (REPORTE DE FALLA)</B></FONT></TD></TR><TR><TD ALIGN="LEFT">id: entero<BR ALIGN="LEFT"/>equipo_id: entero<BR ALIGN="LEFT"/>descripción: texto<BR ALIGN="LEFT"/>prioridad: baja / media / alta<BR ALIGN="LEFT"/>estado: abierto / en proceso / cerrado<BR ALIGN="LEFT"/>tecnico_id: entero (opcional)<BR ALIGN="LEFT"/>fecha de creación / cierre</TD></TR><HR/><TR><TD ALIGN="LEFT"><I>puede_cerrarse(seguimientos)</I></TD></TR></TABLE>>];
+ Seguimiento [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="9" COLOR="#0f766e" BGCOLOR="#f0fdfa"><TR><TD BGCOLOR="#0f766e"><FONT COLOR="white"><B>SEGUIMIENTO</B></FONT></TD></TR><TR><TD ALIGN="LEFT">id: entero<BR ALIGN="LEFT"/>ticket_id: entero<BR ALIGN="LEFT"/>comentario: texto<BR ALIGN="LEFT"/>fecha: fecha y hora</TD></TR></TABLE>>];
+ Tecnico [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="9" COLOR="#7c3aed" BGCOLOR="#f5f3ff"><TR><TD BGCOLOR="#7c3aed"><FONT COLOR="white"><B>TÉCNICO</B></FONT></TD></TR><TR><TD ALIGN="LEFT">id: entero<BR ALIGN="LEFT"/>nombre: texto<BR ALIGN="LEFT"/>especialidad: texto<BR ALIGN="LEFT"/>correo: texto</TD></TR></TABLE>>];
+ Usuario [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="9" COLOR="#7c3aed" BGCOLOR="#f5f3ff"><TR><TD BGCOLOR="#7c3aed"><FONT COLOR="white"><B>USUARIO</B></FONT></TD></TR><TR><TD ALIGN="LEFT">id: entero<BR ALIGN="LEFT"/>nombre de usuario: texto<BR ALIGN="LEFT"/>rol: administrador / técnico</TD></TR></TABLE>>];
+ {rank=same; Departamento; Tecnico; Usuario}
+ {rank=same; Equipo; Ticket}
+ Departamento -> Equipo [label="1 a muchos\ncontiene", minlen=1];
+ Equipo -> Ticket [label="1 a muchos\nreporta fallas", minlen=1];
+ Tecnico -> Ticket [label="1 a muchos\natiende", minlen=1];
+ Ticket -> Seguimiento [label="1 a muchos\nregistra acciones", minlen=1];
+ Usuario -> Tecnico [style=dashed, constraint=false, label="cuenta opcional\nde técnico", color="#a78bfa"];
+}

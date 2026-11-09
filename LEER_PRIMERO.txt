@@ -1,0 +1,22 @@
+MESA DE AYUDA - SOPORTE TECNICO · VERSION 2.0
+
+INSTALACION NUEVA
+1. Abre INSTALAR_WINDOWS.bat para instalar las dependencias.
+2. Abre INICIAR_WINDOWS.bat. Si no existe mesa_ayuda.db, el asistente creará la base y pedirá nombre y contraseña del administrador.
+3. Abre http://127.0.0.1:8000 (interfaz) o http://127.0.0.1:8000/docs (API).
+
+ACTUALIZACION DE UNA INSTALACION ANTERIOR
+1. Detén el servidor y copia mesa_ayuda.db y .mesa_secret (si existe).
+2. Reemplaza los archivos de aplicación, pero conserva tu base de datos.
+3. Inicia normalmente. La migración automática añade SLA, historial y mantenimientos sin borrar los registros existentes.
+4. NO ejecutes inicializar_bd.py para actualizar: ese script recrea la base.
+
+NOVEDADES 2.0
+- SLA automático: alta 4 h, media 8 h, baja 24 h.
+- Panel de cumplimiento y tickets fuera de plazo.
+- Historial de actividad de cada ticket.
+- Permisos de técnicos limitados a sus tickets asignados.
+- Mantenimientos preventivos y correctivos de equipos.
+- Secreto local persistente para tokens.
+
+Consulta README.md para detalles, pruebas y documentación.

@@ -1,0 +1,12 @@
+digraph ER { graph [fontname="DejaVu Sans", bgcolor="white", pad=.3, ranksep=.9, nodesep=.5, labelloc=t, label="DIAGRAMA ENTIDAD–RELACIÓN · TABLAS Y CLAVES\nMesa de ayuda de soporte técnico", fontsize=22, fontcolor="#173456", splines=true];node [shape=record,style="filled,rounded",fillcolor="#F2F7FD",fontname="DejaVu Sans",fontsize=11,color="#6386AA"];
+ departamentos [label="{DEPARTAMENTOS|PK id\lnombre (único)\lubicacion\l}"];
+ equipos [label="{EQUIPOS|PK id\lcodigo_inventario (único)\ltipo · marca · modelo\lFK departamento_id\l}"];
+ tecnicos [label="{TÉCNICOS|PK id\lnombre · especialidad\lcorreo (único)\lactivo\l}"];
+ tickets [label="{TICKETS|PK id\lFK equipo_id\lFK tecnico_id (opcional)\ldescripcion · prioridad · estado\lfecha_creacion · fecha_cierre\l}",fillcolor="#DFF6E9",color="#339174"];
+ seguimientos [label="{SEGUIMIENTOS|PK id\lFK ticket_id\lcomentario · fecha\l}"];
+ usuarios [label="{USUARIOS|PK id\lnombre_usuario (único)\lcontrasena_hash · rol\lFK tecnico_id (opcional, único)\l}"];
+ departamentos -> equipos [label="1 a muchos"];
+ equipos -> tickets [label="1 a muchos"];
+ tecnicos -> tickets [label="1 a muchos"];
+ tickets -> seguimientos [label="1 a muchos"];
+ tecnicos -> usuarios [label="1 a 0..1",style=dashed]; }
