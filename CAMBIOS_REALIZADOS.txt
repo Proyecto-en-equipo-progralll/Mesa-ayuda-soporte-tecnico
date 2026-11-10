@@ -1,0 +1,9 @@
+VERSION 2.0
+- SLA por prioridad y reporte de cumplimiento.
+- Historial de auditoría de tickets y seguimientos.
+- Acceso de técnico limitado a tickets asignados.
+- Módulo de mantenimiento preventivo/correctivo.
+- Migraciones incrementales compatibles con la base anterior.
+- Clave de firma local persistente y excluida de Git.
+- Dashboard ampliado y pruebas automatizadas.
+- Se conservan los módulos originales y sus rutas API.
