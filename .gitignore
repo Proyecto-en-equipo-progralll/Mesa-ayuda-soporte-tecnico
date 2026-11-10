@@ -1,15 +1,28 @@
+<<<<<<< HEAD
 venv/
 .venv/
 __pycache__/
 .pytest_cache/
+=======
+﻿**/venv/
+**/.venv/
+**/__pycache__/
+**/.pytest_cache/
+>>>>>>> origin/main
 *.pyc
 *.db
 *.sqlite
 *.sqlite3
 .env
 .env.*
+<<<<<<< HEAD
 ACCESO_INICIAL.txt
 respaldos/
 backups/
 
 .mesa_secret
+=======
+**/ACCESO_INICIAL.txt
+**/backups/
+**/respaldos/
+>>>>>>> origin/main

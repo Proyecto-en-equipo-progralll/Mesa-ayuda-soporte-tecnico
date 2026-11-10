@@ -1,0 +1,7 @@
+Versión visual revisada
+- UML español aprobado agregado a DOCUMENTACION/UML_APROBADO
+- Columnas legibles por módulo
+- Se oculta edición de tickets cerrados
+- Botón para actualizar información
+- Mejoras de apariencia, accesibilidad y móvil
+- Se conserva BD de ejemplo y esquema original

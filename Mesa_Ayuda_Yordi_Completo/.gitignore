@@ -1,0 +1,13 @@
+﻿venv/
+.venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+*.db
+*.sqlite
+*.sqlite3
+.env
+.env.*
+ACCESO_INICIAL.txt
+respaldos/
+backups/
